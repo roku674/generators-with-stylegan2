@@ -1,4 +1,4 @@
 numpy
 Pillow
-dnnlib
+git+https://github.com/NVlabs/dnnlib.git
 pretrained_networks
