@@ -7,16 +7,11 @@ WORKDIR /app
 # Copy the application files to the container
 COPY . /app
 
-# Install git and upgrade pip
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# Upgrade pip
 RUN pip install --upgrade pip
 
-# Copy the pre-cloned dnnlib repository into the container
-COPY /path/to/local/dnnlib /app/dnnlib
-
-# Install the required Python dependencies
-RUN pip install --no-cache-dir numpy Pillow
-RUN pip install --no-cache-dir /app/dnnlib
+# Install the required Python dependencies from requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
