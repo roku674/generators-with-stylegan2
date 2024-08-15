@@ -1,4 +1,4 @@
-numpy
+numpy==1.22.0  # Ensure this version or later supports Python 3.11
 Pillow
 dnnlib-util
 pretrained_networks
