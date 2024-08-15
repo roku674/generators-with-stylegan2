@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the application files to the container
 COPY . /app
 
+# Ensure the networks directory is copied as well
+COPY networks /app/networks
+
 # Upgrade pip
 RUN pip install --upgrade pip
 
