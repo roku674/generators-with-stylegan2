@@ -1,13 +1,16 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.9-slim
+# Use Python 3.11 as the base image
+FROM python:3.11-slim
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copy all the application files to the container
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
+# Upgrade pip to the latest version
+RUN pip install --upgrade pip
+
+# Install the required dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 80 available to the world outside this container
