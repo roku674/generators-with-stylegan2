@@ -13,6 +13,9 @@ RUN pip install --upgrade pip
 # Install the required Python dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Set the environment variable to disable oneDNN custom operations
+ENV TF_ENABLE_ONEDNN_OPTS=0
+
 # Make port 80 available to the world outside this container
 EXPOSE 80
 
